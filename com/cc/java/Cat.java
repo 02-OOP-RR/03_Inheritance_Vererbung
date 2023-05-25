@@ -1,39 +1,21 @@
 package com.cc.java;
 
-public class Cat {
+public class Cat extends SuperCat{
 
-  private String name;
-  private String furColor;
-  private int age; 
-  private boolean isFemale;
 
   private int counter;
 
-  public Cat(String name, String furColor, int age, boolean isFemale) {
-    this.name = name;
-    this.furColor = furColor;
-    this.age = age;
-    this.isFemale = isFemale;
+  
+  public Cat(String name, String furColor, int age) {
+    super(name, furColor, age);
+
   }
 
-  public String getStringAttributes(String op) {
-    switch (op) {
-      case "#name":
-        return name;
-      case "#color":
-        return furColor;
-      default:
-        return "ERROR!";
-    }
-  }
 
   public String getAge() {
-    if (isFemale) {
       return checkEscalationLevel();
-    } else {
-      return String.valueOf(age);
+      
     }
-  }
 
   private String checkEscalationLevel() {
 
@@ -46,6 +28,9 @@ public class Cat {
         return "I've told you once!";
       case 3:
         return "Talk to the hand!";
+        case 4: 
+        return "no molestes";
+        
       default:
         return "1#!?&&%";
     }
